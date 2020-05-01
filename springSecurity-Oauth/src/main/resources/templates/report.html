@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:th="http://www.thymeleaf.org">
+
 <head>
 <meta charset="UTF-8">
 <title>Report Html</title>
 </head>
 <body>
-
+	<table border="1">
+		<tr style="font-size: 13">
+			<td>Name</td>
+			<td>Age</td>
+			<td>Phone Number</td>
+		</tr>
+		<tr th:each="person :  ${persons}">
+			<td><p th:text="${person.name}" /></td>
+			<td><p th:text="${person.age}" /></td>
+			<td><p th:text="${person.phoneNumber}" /></td>
+		</tr>
+	</table>
 </body>
 </html>
